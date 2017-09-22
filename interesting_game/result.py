@@ -4,12 +4,9 @@ import Person
 import Action
 
 def Account_buff(buff,person):      ##buff结算
-    ###击飞，击运，沉默，持续掉血，持续掉蓝 
-    if buff.type == 'fly'：
-    elif buff.type == 'dizzy':
-    elif buff.type == 'silent':
-    elif buff.type == 'Persistent HP':
-    elif buff.type == 'Persistent MP':
+    Action.Num_Change(person,buff.Effect,buff.Type)
+    buff.Continuous_Round -=1
+
 
 def Exist_Person(x,y,persons=[]):   ##区域内人物判断
     for person in Persons:
@@ -17,7 +14,6 @@ def Exist_Person(x,y,persons=[]):   ##区域内人物判断
             return person 
         else:
             return 0
-
 
 
 def Local_Range(area,change_num,change_type):      ##区域生成

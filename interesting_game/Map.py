@@ -1,5 +1,5 @@
 import Buff
-import Map
+import Action
 import Person
 import Result
 

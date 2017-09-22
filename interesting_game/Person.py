@@ -6,8 +6,8 @@ import Map
 
 
 class Person(object):
-    def __init__(self,Id = '',Name = '',Hp_UpperLimit = 1,Mp_UpperLimit = 1,Attact_num = 1,\
-        Attact_dis = 1,Run_dis = 1,Defense_num = 1,Status_Buff = [],AliveorDie = 1,\
+    def __init__(self,Id = '',Name = '',Hp_UpperLimit = 1,Mp_UpperLimit = 1,Attact_Num = 1,\
+        Attact_Dis = 1,Run_Dis = 1,Defense_Num = 1,Status_Buff = [],AliveorDie = 1,\
         Move_Allow = 1,Magic_Allow = 1):
         self.Id = Id
         self.Name = Name
@@ -15,10 +15,10 @@ class Person(object):
         self.Hp_now = Hp_UpperLimit
         self.Mp_UpperLimit = Mp_UpperLimit
         self.Mp_now = Mp_UpperLimit
-        self.Attact_num = Attact_num
-        self.Attact_dis = Attact_dis
-        self.Run_dis = Run_dis
-        self.Defense_num = Defense_num
+        self.Attact_Num = Attact_Num
+        self.Attact_Dis = Attact_Dis
+        self.Run_Dis = Run_Dis
+        self.Defense_Num = Defense_Num
         self.Status_Buff = Status_Buff
         self.Position = [0,0]
         self.AliveorDie = AliveorDie
@@ -43,9 +43,5 @@ class Person(object):
     def magic(self):
         print ("I will use magic")
 
-    def die(self):
-        if self.Hp_now <= 0:
-            self.AliveorDie = 0
-            print("I am die")
 
 
