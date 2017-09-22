@@ -4,3 +4,4 @@ class Person(object):
 		self.Mp_UpperLimit = 0
         self.Attact_num = 0
         self.Attact_dis = 0
+        self.run_dis = 0
