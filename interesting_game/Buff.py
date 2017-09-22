@@ -1,6 +1,7 @@
 import Person
 import Action
-
+import Result
+import Map
 
 class Buff(object):
 
@@ -9,4 +10,3 @@ class Buff(object):
         self.Effect = Effect
         self.Continuous_Round = Continuous_Round
 
-    
