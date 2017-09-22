@@ -5,8 +5,11 @@ import Action
 
 def Account_buff(buff,person):
 
-    ###击飞 击晕 沉默 持续掉血 持续掉蓝 中毒 
-    
+    if buff.type == 'fly'：
+    elif buff.type == 'dizzy':
+    elif buff.type == 'silent':
+    elif buff.type == 'Persistent HP':
+    elif buff.type == 'Persistent MP':
 
 def Exist_Person(x,y,persons=[]):
     for person in Persons:
