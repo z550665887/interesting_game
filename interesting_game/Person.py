@@ -8,7 +8,7 @@ import Map
 class Person(object):
     def __init__(self,Id = '',Name = '',Hp_UpperLimit = 1,Mp_UpperLimit = 1,Attact_Num = 1,\
         Attact_Dis = 1,Run_Dis = 1,Defense_Num = 1,Status_Buff = [],AliveorDie = 1,\
-        Move_Allow = 1,Magic_Allow = 1):
+        Move_Allow = 1,Magic_Allow = 1,Position=[0,0]):
         self.Id = Id
         self.Name = Name
         self.Hp_UpperLimit = Hp_UpperLimit
@@ -20,7 +20,7 @@ class Person(object):
         self.Run_Dis = Run_Dis
         self.Defense_Num = Defense_Num
         self.Status_Buff = Status_Buff
-        self.Position = [0,0]
+        self.Position = Position
         self.AliveorDie = AliveorDie
         self.Move_Allow = Move_Allow
         self.Magic_Allow = Magic_Allow
