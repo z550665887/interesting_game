@@ -10,35 +10,36 @@ class Action(object):
 
     def Num_Change(self,person,change_num,change_type):
         if change_type == "Hp_Change":
-            Hp_Change(change_num,person)
+            self.Hp_Change(change_num,person)
         elif change_type == "Mp_Change":
-            Mp_Change(change_num,person)
+            self.Mp_Change(change_num,person)
         elif change_type == "Status_Buff":
-            Status_Change(change_num,person)
+            self.Status_Change(change_num,person)
         elif change_type == "Move_Allow_Change":
-            Move_Allow_Change(change_num,person)
+            self.Move_Allow_Change(change_num,person)
         elif change_type == "Magic_Allow_Change":
-            Magic_Allow_Change(change_num,person)
+            self.Magic_Allow_Change(change_num,person)
         elif change_type == "Hp_UpperLimit_Change":
-            Hp_UpperLimit_Change(change_num,person)
+            self.Hp_UpperLimit_Change(change_num,person)
         elif change_type == "Mp_UpperLimit_Change":
-            Mp_UpperLimit_Change(change_num,person)
+            self.Mp_UpperLimit_Change(change_num,person)
         elif change_type == "Attact_Num_Change":
-            Attact_Num_Change(change_num,person)
+            self.Attact_Num_Change(change_num,person)
         elif change_type == "Attact_Dis_Change":
-            Attact_Dis_Change(change_num,person)
+            self.Attact_Dis_Change(change_num,person)
         elif change_type == "Run_Dis_Change":
-            Run_Dis_Change(change_num,person)
+            self.Run_Dis_Change(change_num,person)
         elif change_type == "Defense_Num_Change":
-            Defense_Num_Change(change_num,person)
+            self.Defense_Num_Change(change_num,person)
         elif change_type == "AliveorDie_Change":
-            AliveorDie_Change(change_num,person)
+            self.AliveorDie_Change(change_num,person)
 
     def Hp_Change(self,change_num,person):  
         person.Hp_now += change_num
+        print (person.Hp_now)
         if person.Hp_now <= 0:
-            print("%s is die" %person.name)
-            Action.Num_Change(person,0,"AliveorDie_Change")
+            print("%s is die" %person.Name)
+            self.Num_Change(person,0,"AliveorDie_Change")
 
     def Mp_Change(self,change_num,person):   
         person.Mp_now += change_num

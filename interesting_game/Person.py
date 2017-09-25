@@ -26,19 +26,26 @@ class Person(object):
         self.Magic_Allow = Magic_Allow
 
     def attact(self,x=0,y=0):
-        if self.Attact_dis >= (abs(x)+abs(y)):
-            print("I attact position({0},{1})".format((self.Position[0]+x),(slef.Position[1]+y)))
+        if self.Attact_Dis >= (abs(x)+abs(y)):
+            print("I attact position({0},{1})".format((self.Position[0]+x),(self.Position[1]+y)))
+
+            area = Map.Area([self.Position[0]+x,self.Position[1]+y],[self.Position[0]+x,self.Position[1]+y],1)
+            return area
         else:
             print("I can't attact their")
+            return 0
 
     def defense(self,x=0,y=0):
-        print("I Defense position({0},{1})".format((self.Position[0]+x),(slef.Position[1]+y)))
+        print("I Defense position({0},{1})".format((self.Position[0]+x),(self.Position[1]+y)))
 
     def run(self,x=0,y=0):
-        if self.Run_dis >= (abs(x)+abs(y)):
-            print("I run to position({0},{1})".format((self.Position[0]+x),(slef.Position[1]+y)))
+        if self.Run_Dis >= (abs(x)+abs(y)):
+            print("I run to position({0},{1})".format((self.Position[0]+x),(self.Position[1]+y)))
+            self.Position[0],self.Position[1] = self.Position[0]+x,self.Position[1]+y
+            return 1
         else:
             print("I can't run to their")
+            return 0 
 
     def magic(self):
         print ("I will use magic")
