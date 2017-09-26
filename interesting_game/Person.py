@@ -25,10 +25,16 @@ class Person(object):
         self.Move_Allow = Move_Allow
         self.Magic_Allow = Magic_Allow
 
+    def ifalive(self):
+        if self.AliveorDie <=0:
+            print("you are die ,you can't move")
+            return 0
+        else:
+            return 1
+
     def attact(self,x=0,y=0):
         if self.Attact_Dis >= (abs(x)+abs(y)):
             print("I attact position({0},{1})".format((self.Position[0]+x),(self.Position[1]+y)))
-
             area = Map.Area([self.Position[0]+x,self.Position[1]+y],[self.Position[0]+x,self.Position[1]+y],1)
             return area
         else:
@@ -38,13 +44,19 @@ class Person(object):
     def defense(self,x=0,y=0):
         print("I Defense position({0},{1})".format((self.Position[0]+x),(self.Position[1]+y)))
 
-    def run(self,x=0,y=0):
+    def run(self,x=0,y=0,PERSONS=[]):
         if self.Run_Dis >= (abs(x)+abs(y)):
-            print("I run to position({0},{1})".format((self.Position[0]+x),(self.Position[1]+y)))
-            self.Position[0],self.Position[1] = self.Position[0]+x,self.Position[1]+y
-            return 1
+            persons = Result.Exist_Person(self.Position[0]+x,self.Position[1]+y,PERSONS)
+            for person in persons:
+                if person and self.Name !=person.Name:
+                    print("I can't run to their because of someone here")
+                    return 0
+            else:
+                print("I run to position({0},{1})".format((self.Position[0]+x),(self.Position[1]+y)))
+                self.Position[0],self.Position[1] = self.Position[0]+x,self.Position[1]+y
+                return 1
         else:
-            print("I can't run to their")
+            print("I can't run to their because of distance")
             return 0 
 
     def magic(self):

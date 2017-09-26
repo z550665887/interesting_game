@@ -15,8 +15,9 @@ Result.printmap(Result.showmap(MAP,PERSONS))
 # for person in PERSONS:
 #     print (person.Hp_now)
 for person in PERSONS:
-    Result.run_turn(person)
-    Result.attact_turn(person,PERSONS)
+	if person.ifalive():
+	    Result.run_turn(person,PERSONS)
+	    Result.attact_turn(person,PERSONS)
 Result.printmap(Result.showmap(MAP,PERSONS))
 # for person in PERSONS:
 #     print (person.Hp_now)
